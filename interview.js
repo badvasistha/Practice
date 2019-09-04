@@ -1,12 +1,13 @@
-// How would you check if a number is an integer?
+// What will the following code output?
 
-function isInt(num){
-    if (num % 1 === 0){
-        return true
-    } else if (num % 1 !== 0){
-        return false
-    }
-}
+(function() {
+    var a = b = 5;
+  })();
+  
+  console.log(b); //5
 
-console.log(isInt(2))
-console.log(isInt(2.5))
+// The code above will output 5 even though it seems as if the variable was declared within a function and can't be accessed outside of it. This is because
+//var a = b = 5; is interpreted the following way:
+    // var a = b;
+    // b = 5;
+//But b is not declared anywhere in the function with var so it is set equal to 5 in the global scope.
