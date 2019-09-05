@@ -1,15 +1,16 @@
-//How would you add your own method to the Array object so the following code would work?
-// var arr = [1, 2, 3, 4, 5];
-// var avg = arr.average();
-// console.log(avg);
+//callback function explained//
 
-Array.prototype.average = function() {
-    // calculate sum
-    var sum = this.reduce(function(prev, cur) { return prev + cur; });
-    // return sum divided by number of elements
-    return sum / this.length;
-  }
-  
-  var arr = [1, 2, 3, 4, 5];
-  var avg = arr.average();
-  console.log(avg); // => 3
+//A callback function that is passed into another function as an argument//
+//Why was a function sad after a successfull first call? It didn't get a callback.
+
+var arr = [1, 2, 3]
+
+function modifyArray(arr, callback){
+  arr.push(4)
+  callback();
+}
+
+modifyArray(arr, function(){
+  console.log(`The arr is now modified to ${arr}`)
+})
+
