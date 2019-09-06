@@ -1,16 +1,21 @@
-//callback function explained//
+var data = [
+  {name: 'daniel', age: 45},
+  {name: 'john', age: 34},
+  {name: 'robert', age: null},
+  {name: 'jen', age: undefined},
+  {name: null, age: undefined}
+];
 
-//A callback function that is passed into another function as an argument//
-//Why was a function sad after a successfull first call? It didn't get a callback.
 
-var arr = [1, 2, 3]
 
-function modifyArray(arr, callback){
-  arr.push(4)
-  callback();
-}
-
-modifyArray(arr, function(){
-  console.log(`The arr is now modified to ${arr}`)
+const filteredData = data.filter(function(el){
+  if(el.name != undefined && el.age != undefined){
+    return true;
+  }
+  else {
+    return false};
 })
+
+console.log(filteredData)
+
 
