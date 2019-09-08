@@ -1,14 +1,23 @@
-//Anagrams are words or phrases that contain the same number of characters.
-let str1 = 'hello world',
-    str2 = 'world hello';
-const anagram = function(){
-  if (str1.length === str2.length){
-    console.log('is anagram')
-  }
-  else {
-    console.log('not an anagram')
+//Given a string of words or phrases, count the number of vowels.
+
+let str = "hello";
+
+function countVowels() {
+  let count = 0;
+  let arr = str.split("");
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i] === "a" ||
+      arr[i] === "e" ||
+      arr[i] === "i" ||
+      arr[i] === "o" ||
+      arr[i] === "u"
+    ) {
+      count = arr[i].length;
+      count++;
+      console.log(count);
+    }
   }
 }
-anagram(str1, str2);
 
-
+countVowels(str);
