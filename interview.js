@@ -1,45 +1,7 @@
-//Palindrome
-let sampleStr = "racecar";
+// Integer reversal 
 
-//======== Method 1 ============//
+let num = -1230;
+const reversedNum = num => parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num)
+console.log(reversedNum(num)) // -321
 
-const isPalindrom = function() {
-  let newStr = sampleStr
-    .split("")
-    .reverse()
-    .join("");
 
-  if (newStr === sampleStr) {
-    return true;
-  } else {
-    return false;
-  }
-};
-//=================================//
-
-//=============== Method 2 ========//
-
-// function isPalindrom() {
-//   for (let i = 0; i < sampleStr.length; i++) {
-//     if (sampleStr[i] !== sampleStr[sampleStr.length - (i + 1)]) {
-//       return false;
-//     } else return true;
-//   }
-// }
-//==================================//
-
-//=============== Method 3 ========//
-
-// function isPalindrom(){
-//   const sampleArr = sampleStr.split('')
-//   console.log(sampleArr)
-//   for (let i = 0; i< sampleArr.length; i++){
-//     if (sampleArr[i] !== sampleArr[sampleArr.length - (i + 1)]){
-//      return false;
-//     }
-//     else {
-//       return true;
-//     }
-//   }
-// }
-console.log(isPalindrom(sampleStr));
