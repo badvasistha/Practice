@@ -1,22 +1,16 @@
-// Fizz Buzz 
-// Given a number as an input, print out every integer from 1 to that number. 
-// However, when the integer is divisible by 2, print out “Fizz”;
-// when it’s divisible by 3, print out “Buzz”; when it’s divisible by both 2 and 3, print out “Fizz Buzz”.
+// MaxCharacter
+let str = 'hello'
+var getMax = function () {
+  var max = 0,
+      maxChar = '';
+   str.split('').forEach(function(char){
+     if(str.split(char).length > max) {
+         max = str.split(char).length;
+         maxChar = char;
+      }
+   });
+   return maxChar;
+ };
 
-function fizzBuzz(num){
-  for (let i = 1; i < num + 1; i++){
-    
-    if (i % 2 === 0){
-      console.log(i + ' Fizz')
-    }
-    if (i % 3 === 0){
-      console.log(i + ' Buzz')
-    }
-    if (i % 2 === 0 && i % 3 === 0){
-      console.log(i + ' FizzBuzz')
-    }
-  }
-}
-fizzBuzz(100)
-
+ console.log(getMax(str))
 
