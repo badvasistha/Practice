@@ -1,16 +1,14 @@
-// MaxCharacter
-let str = 'hello'
-var getMax = function () {
-  var max = 0,
-      maxChar = '';
-   str.split('').forEach(function(char){
-     if(str.split(char).length > max) {
-         max = str.split(char).length;
-         maxChar = char;
-      }
-   });
-   return maxChar;
- };
+//Anagrams are words or phrases that contain the same number of characters.
+let str1 = 'hello world',
+    str2 = 'world hello';
+const anagram = function(){
+  if (str1.length === str2.length){
+    console.log('is anagram')
+  }
+  else {
+    console.log('not an anagram')
+  }
+}
+anagram(str1, str2);
 
- console.log(getMax(str))
 
