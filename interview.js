@@ -1,23 +1,11 @@
-//Given a string of words or phrases, count the number of vowels.
+//Array Chunking
+let arr = [1, 2, 3, 4];
 
-let str = "hello";
-
-function countVowels() {
-  let count = 0;
-  let arr = str.split("");
-  for (let i = 0; i < arr.length; i++) {
-    if (
-      arr[i] === "a" ||
-      arr[i] === "e" ||
-      arr[i] === "i" ||
-      arr[i] === "o" ||
-      arr[i] === "u"
-    ) {
-      count = arr[i].length;
-      count++;
-      console.log(count);
-    }
+function chunk(arr, len){
+  let chunks = []
+  for (i = 0; i < arr.length; i++){
+    chunks.push(arr.slice(i, arr.length))
+    console.log(chunks)
   }
 }
-
-countVowels(str);
+chunk(arr)
