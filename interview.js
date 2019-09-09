@@ -1,11 +1,9 @@
-//Array Chunking
-let arr = [1, 2, 3, 4];
+// Reverse Words
 
-function chunk(arr, len){
-  let chunks = []
-  for (i = 0; i < arr.length; i++){
-    chunks.push(arr.slice(i, arr.length))
-    console.log(chunks)
-  }
+var phrase = 'I love Javascript';
+function reversePhrase(){
+  var reverseP = phrase.split('').reverse().join('');
+  console.log(reverseP)
 }
-chunk(arr)
+
+reversePhrase(phrase)
