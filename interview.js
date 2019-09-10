@@ -1,28 +1,31 @@
 // Write a function that takes an array of numbers and a function as parameters.
-// The function paremeter should do something to a numbers
-// (increment, double, decrement, etc) and return the result.
-// Your function should return the array that results from applying the
-// function parameter to each element in the number array.
-//
+// The function should return true if the input meets a certain condition
+// or false otherwise. Your function should return true
+// if the function parameter returns true for _any_ of the array elements in the array
+// parameter or false otherwise.
 //   Ex:
-// Input: [1,2,3]  function(num){return num * 2}
-// Output: [2,4,6]
+// Input: [1,2,3]  function(num){return num === 2}
+// Output: true
 //
-// Input: [1,2,3]  function(num){return num + 1}
-// Output: [2,3,4]
+// Input: [1,5,3]  function(num){return num === 2}
+// Output: false
 //
-// Input: [1,2,3] function(num) {return num /2}
-// Output: [.5, 1. 1.5]
+// Input: [1,2,3]  function(num){return num % 2 === 0}
+// Output: true
 //
-// Input: [1,2,3] function(num) {return num - 2}
-// Output: [-1, 0, 1]
+// Input: [1,5,3]  function(num){return num % 2 === 0}
+// Output: false
 
 let arr = [1, 2, 3]
 const doSomething = function(arr, callback){
-  for (let i = 0; i< arr.length; i++){
-    callback();
-  }
+    callback()
 }
+
 doSomething(arr, function(){
-  console.log(arr.map(ele=>ele*2))
+  for (let i =0; i<arr.length; i++){
+    if (arr[i]%2 === 0){
+      return true
+    }
+  }
+  return false
 })
