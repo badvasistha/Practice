@@ -1,31 +1,34 @@
+//===============================================
+// Question
+// ===============================================
 // Write a function that takes an array of numbers and a function as parameters.
-// The function should return true if the input meets a certain condition
-// or false otherwise. Your function should return true
-// if the function parameter returns true for _any_ of the array elements in the array
-// parameter or false otherwise.
-//   Ex:
+// The function parameter should return true if the input meets a certain condition or false otherwise.
+// Your function should run the function parameter on every element in the array parameter and ,
+// if it returns true, add the element to a new array. Return the new array.
+//
+// Ex:
+//
 // Input: [1,2,3]  function(num){return num === 2}
-// Output: true
+// Output: [2]
 //
-// Input: [1,5,3]  function(num){return num === 2}
-// Output: false
+// Input: [1,2,3,4,5,6]  function(num){return num % 2 === 0}
+// Output: [2,4,6]
 //
-// Input: [1,2,3]  function(num){return num % 2 === 0}
-// Output: true
-//
-// Input: [1,5,3]  function(num){return num % 2 === 0}
-// Output: false
+// Input: [1,2,3,4,5,6]  function(num){return num > 3}
+// Output: [4,5,6]
 
-let arr = [1, 2, 3]
-const doSomething = function(arr, callback){
-    callback()
-}
+let arr = [1, 2, 3, 4, 5, 6];
+const doSomething = function(arr, callback) {
+  callback();
+};
 
-doSomething(arr, function(){
-  for (let i =0; i<arr.length; i++){
-    if (arr[i]%2 === 0){
-      return true
+doSomething(arr, function() {
+  for (let i = 0; i < arr.length; i++) {
+    let filtered = [];
+    if (arr[i] % 2 === 0) {
+      filtered.push(arr[i]);
+      console.log(filtered);
     }
   }
-  return false
-})
+});
+
