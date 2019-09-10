@@ -1,28 +1,28 @@
-// Write a function that takes 2 parameters - the first is an array, the second is an element that may or may not be in the array.
-// Without using any built in array methods, return true if the element is in the array or false otherwise.
-// Ex:
-// Input: [1,2,3]  1
-// Output: true
+// Write a function that takes an array of numbers and a function as parameters.
+// The function paremeter should do something to a numbers
+// (increment, double, decrement, etc) and return the result.
+// Your function should return the array that results from applying the
+// function parameter to each element in the number array.
+//
+//   Ex:
+// Input: [1,2,3]  function(num){return num * 2}
+// Output: [2,4,6]
+//
+// Input: [1,2,3]  function(num){return num + 1}
+// Output: [2,3,4]
+//
+// Input: [1,2,3] function(num) {return num /2}
+// Output: [.5, 1. 1.5]
+//
+// Input: [1,2,3] function(num) {return num - 2}
+// Output: [-1, 0, 1]
 
-// Input: [1,2,3]  4
-// Output: false
-
-// Input: ['code', 'dev', 'nerd']  'nerd'
-// Output: true
-
-// Input:   'genius'
-// Output: false
-
-let arr = ["code", "dev", "nerd"];
-let ele = "dev";
-
-const includes = function(arg1, arg2) {
-  for (let i = 0; i < arg1.length; i++) {
-    if (arg1[i] === arg2) {
-      return true;
-    }
+let arr = [1, 2, 3]
+const doSomething = function(arr, callback){
+  for (let i = 0; i< arr.length; i++){
+    callback();
   }
-  return false;
-};
-
-console.log(includes(arr, ele));
+}
+doSomething(arr, function(){
+  console.log(arr.map(ele=>ele*2))
+})
