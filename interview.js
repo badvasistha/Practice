@@ -1,41 +1,28 @@
-//Finding the middle element of a linked list
-//A linked list is a data structure which consists of a group of nodes where each node may point to some other node to form a sequence.
-//Our nodes will have two fields:
-//(1) a "data" field which will store our data (string, number, etc.)
-//(2) a "next" field which will be a reference to some other node
+// Write a function that takes 2 parameters - the first is an array, the second is an element that may or may not be in the array.
+// Without using any built in array methods, return true if the element is in the array or false otherwise.
+// Ex:
+// Input: [1,2,3]  1
+// Output: true
 
-function Node(data, next) {
-  this.data = data;
-  this.next = next;
-}
+// Input: [1,2,3]  4
+// Output: false
 
-// setup some nodes and connect them to each other
-// the linked list looks like:
-// (head) n5 -> n4 -> n3 -> n2 -> n1 -> null
-var n1 = new Node("Hello", null);
-var n2 = new Node("21", n1);
-var n3 = new Node("Green", n2);
-var n4 = new Node("Blue", n3);
-var n5 = new Node("Daniel", n4);
+// Input: ['code', 'dev', 'nerd']  'nerd'
+// Output: true
 
-// assign a node to the head which functions
-// as the entry into our linked list
-var head = n5;
+// Input:   'genius'
+// Output: false
 
-// setup pointers to both start
-// at the head of the linked list
-var fastPointer = head;
-var slowPointer = head;
+let arr = ["code", "dev", "nerd"];
+let ele = "dev";
 
-// loop through the linked list
-// when fastPointer reaches the end of the list
-// then slowPointer will be at the middle node
-while (fastPointer.next !== null && fastPointer.next.next !== null) {
-  fastPointer = fastPointer.next.next;
-  slowPointer = slowPointer.next;
-}
+const includes = function(arg1, arg2) {
+  for (let i = 0; i < arg1.length; i++) {
+    if (arg1[i] === arg2) {
+      return true;
+    }
+  }
+  return false;
+};
 
-// slowPointer is now at the middle node in the linked list
-console.log(slowPointer.data);
-
-//Running time: O(n)
+console.log(includes(arr, ele));
